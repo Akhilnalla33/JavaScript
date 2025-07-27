@@ -13,4 +13,18 @@ const deposit = () => {
     }
 };
 
+const getNoofLines = () =>{
+    while(true){
+        const getLines = prompt("Enter no.of lines to bet on(1-3): ");
+        const getNumber = parseInt(getLines);
+
+        if(isNaN(getNumber) || getNumber <=0 || getNumber > 3){
+            console.log("Invalid Bet lines try again");
+        }else{
+            return getNumber;
+        }
+    }
+};
+
 const depositedamt = deposit();
+const betLines = getNoofLines();
