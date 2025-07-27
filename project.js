@@ -1,17 +1,16 @@
 const prompt = require("prompt-sync")(); // to Scan
 
 const deposit = () => {
-    let depositAmt;
-    let check;
-    do {
-        depositAmt = prompt("Enter a deposit Amount: "); // by default js takes string
-        check = parseFloat(depositAmt);
-        if (isNaN(check) || check <= 0) {
-            console.log("Invalid Amount, try Again");
-        }
-    } while (isNaN(check) || check <= 0);
+    while(true){
+        const depositAmt = prompt("Enter the amount to deposit: ");
+        const numOfdeposit = parseInt(depositAmt); // by defsult its string so we change that to int or float
 
-    console.log(`You deposited: ${check}`);
+        if(isNaN(numOfdeposit) || numOfdeposit<=0 ){
+            console.log("Invalid deposit try again");
+        }else{
+            return numOfdeposit;
+        }
+    }
 };
 
-deposit();
+const depositedamt = deposit();
